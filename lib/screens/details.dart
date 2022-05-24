@@ -13,7 +13,7 @@ class Details extends StatelessWidget {
     final arguments =
         ModalRoute.of(context)!.settings.arguments as PokemonScreenData;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromRGBO(228, 228, 228, 1),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(
           top: MediaQuery.of(context).padding.top,
@@ -21,8 +21,10 @@ class Details extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            DetailImage(image: arguments.image),
-            DetailTitle(id: arguments.id, name: arguments.name),
+            //DetailImage(image: arguments.image),
+            DetailTitle(
+              name: arguments.name,
+            ),
             DetailData(),
           ],
         ),

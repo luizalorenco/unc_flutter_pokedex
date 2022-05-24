@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 
 class DetailImage extends StatelessWidget {
-  final String image;
-  const DetailImage({ 
-    Key? key,
-    required this.image
-     }) : super(key: key);
+  final String? image;
+  const DetailImage({Key? key, this.image}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(
-        maxHeight: 500
-      ),
-      color: Colors.black,
+      constraints: const BoxConstraints(maxHeight: 500),
+      color: Color.fromRGBO(228, 228, 228, 1),
       child: Center(
         child: Stack(
           children: [
@@ -26,9 +21,9 @@ class DetailImage extends StatelessWidget {
               ),
             ),
             Image.network(
-              image,
+              image!,
               fit: BoxFit.contain,
-              alignment: Alignment.center,
+              alignment: Alignment.topRight,
             )
           ],
         ),

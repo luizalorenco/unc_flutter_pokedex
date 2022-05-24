@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:unc_flutter_pokedex/screens/details_mov.dart';
-import 'package:unc_flutter_pokedex/screens/habilidade.dart';
 import 'package:unc_flutter_pokedex/screens/details.dart';
 import 'package:unc_flutter_pokedex/screens/home.dart';
-import 'package:unc_flutter_pokedex/screens/itens.dart';
-import 'package:unc_flutter_pokedex/screens/movimentos.dart';
-import 'package:unc_flutter_pokedex/screens/tipos.dart';
-import 'package:unc_flutter_pokedex/screens/details_tipos.dart';
-import 'package:unc_flutter_pokedex/screens/details_mov.dart';
-import 'package:unc_flutter_pokedex/screens/details_itens.dart';
-import 'package:unc_flutter_pokedex/screens/details_hab.dart';
+import 'package:unc_flutter_pokedex/screens/details_pokemon.dart';
+import 'package:unc_flutter_pokedex/screens/moves_list.dart';
 
 void main() {
   // chamando o App para execuçao
@@ -27,22 +20,18 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      // iniciando o conceito de navegação por rotas, definindo que a rota inicial é a Home
+      // iniciando o conceito de navegação por rotas
       initialRoute: "/",
       routes: {
         "/": (context) => const Home(),
-        // já criando a rota para exibir os detalhes do pokémon
-        // criando as rotas para todas as telas principais e detalhes
-        "/details": (context) => const Details(),
-        "/tipos": (context) => const Tipos(),
-       "/detailTipos": (context) => const DetailTipos(),
-        "/detailMovimentos": (context) => const DetailMovimentos(),
-        "/detailItens": (context) => const DetailItens(),
-         "/detailHabilidades": (context) => const DetailHabilidades(),
-        "/habilidades": (context) => const Habilidades(),
-        "/itens": (context) => const Itens(),
-        "/movimentos": (context) => const Movimentos(),
-
+        // já criando a rota para exibir os detalhes
+        // do pokémon
+        //"/details": (context) => const Details(),
+        "/details": (context) => const DetailsPokemon(
+            url: "https://pokeapi.co/api/v2/pokemon/charmander"),
+            "/moveslist":(context) => const MovesList(
+              moves: [],
+            ),
       },
     );
   }

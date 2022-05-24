@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unc_flutter_pokedex/models/PokeModel.dart';
+import 'package:unc_flutter_pokedex/models/poke_model.dart';
 import 'package:unc_flutter_pokedex/widgets/pokemon_card.dart';
 
 class PokemonGrid extends StatefulWidget {
@@ -39,7 +39,7 @@ class _PokemonGridState extends State<PokemonGrid> {
             (pokemon) => PokemonCard(
               id: pokemon.id,
               name: pokemon.name,
-              image: pokemon.img,
+            //  image: pokemon.img,
             ),
           )
           .toList(),
